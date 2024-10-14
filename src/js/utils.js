@@ -39,6 +39,9 @@ export function toggleMenu() {
   }
 }
 
+//Gör funktionen globalt tillgänglig
+window.toggleMenu = toggleMenu;
+
 //Funktion för att initiera bildkaruseller
 export function initCarousel() {
   const carousels = document.querySelectorAll('.carousel-container');

@@ -1,0 +1,17 @@
+{
+  "name": "klientsida",
+  "version": "1.0.0",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel src/*.html --open chrome",
+    "build": "parcel build src/*.html"
+  },
+  "keywords": [],
+  "author": "Annelie Svensson",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.12.0",
+    "parcel": "^2.12.0"
+  }
+}

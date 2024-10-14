@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beppes strandbar - Adminsida</title>
+    <link rel="stylesheet" href="css/main.scss" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="js/main.js" type="module" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo"><a href="index.html">Beppes Strandkafé</a></div>
+        <ul class="links">
+          <li><a href="index.html#meny">Meny</a></li>
+          <li><a href="index.html#about">Om kaféet</a></li>
+          <li><a href="index.html#takeaway">Take Away</a></li>
+        </ul>
+        <div class="toggle-btn" onclick="toggleMenu()">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </nav>
+
+      <ul class="dropdown-menu" [class.open]="isMenuOpen">
+        <li><a href="index.html#meny">Meny</a></li>
+        <li><a href="index.html#about">Om kaféet</a></li>
+        <li><a href="index.html#takeaway">Take Away</a></li>
+      </ul>
+    </header>
+
+    <main class="hidden">
+      <div class="admin-container">
+        <h1>Välkommen till Adminsidan!</h1>
+        <button id="logout-button">Logga ut</button>
+      </div>
+
+      <section id="orders-section">
+        <h2>Beställningar</h2>
+        <div id="orders-container">
+          <!-- Beställningar kommer att laddas här dynamiskt -->
+        </div>
+      </section>
+
+      <section class="admin-content">
+        <form id="menuForm">
+          <h2>Skapa ny maträtt/dryck till menyn</h2>
+          <input type="text" name="dishName" placeholder="Maträtt" required />
+          <input type="text" name="ingredients" placeholder="Ingredienser" required />
+          <input type="number" name="price" placeholder="Pris" required />
+
+          <label for="category">Kategori:</label>
+          <select name="category" id="category" required>
+            <option value="sandwiches">Mackor</option>
+            <option value="salads">Sallader</option>
+            <option value="hotmeals">Varmrätter</option>
+            <option value="beverage">Dryck</option>
+          </select>
+
+          <button type="submit">Lägg till maträtt</button>
+          <div id="success-message" class="hidden">Maträtten har lagts till i menyn!</div>
+        </form>
+
+        <section id="admin-menu-section">
+          <h2>Hantera Menyn</h2>
+          <div id="admin-menu-items">
+            <!-- Menyobjekt kommer att laddas här -->
+          </div>
+        </section>
+      </section>
+
+      <!-- Till toppen-knappen -->
+      <button id="toTopBtn" title="Till toppen">▲</button>
+    </main>
+
+    <footer id="main-footer">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h4>Öppettider</h4>
+          <p><i>Period 1/6 - 31/8</i></p>
+          <p>Måndag - Tisdag: Stängt</p>
+          <p>Onsdagar: 12:00 - 21:00</p>
+          <p>Torsdagar: 12:00 - 21:00</p>
+          <p>Fredagar: 12:00 - 21:00</p>
+          <p>Lördagar: 12:00 - 21:00</p>
+          <p>Söndagar: 12:00 - 17:00</p>
+        </div>
+        <div class="footer-section" id="contact">
+          <h4>Hitta hit</h4>
+          <p>Strandvägen 1</p>
+          <p>432 54 Varberg</p>
+        </div>
+        <div class="footer-section">
+          <h4>Snabblänkar</h4>
+          <ul>
+            <li><a href="#meny">Meny</a></li>
+            <li><a href="#about">Om kaféet</a></li>
+            <li><a href="#takeaway">Take Away</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Sociala Medier</h4>
+          <ul class="social-media">
+            <li>
+              <a href="https://facebook.com" aria-label="Länk till Facebook" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            </li>
+            <li>
+              <a href="https://instagram.com" aria-label="Länk till Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href="https://twitter.com" aria-label="Länk till Twitter" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Admin</h4>
+          <ul class="admin-login">
+            <li><i class="fa-solid fa-lock"></i></li>
+            <li><a href="adminlogin.html">Admin</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Beppes Strandkafé & Bramserud Advertising / Annelie Svensson</p>
+        <p id="pic-attribute">Bilder från <a href="https://pixabay.com/sv/">Pixabay</a></p>
+      </div>
+    </footer>
+  </body>
+</html>

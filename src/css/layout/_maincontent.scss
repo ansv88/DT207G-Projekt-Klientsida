@@ -1,0 +1,547 @@
+@use '../base/normalize';
+@use '../base/base';
+@use '../components/components';
+@use '../components/animations';
+
+/* Global stilar */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: base.$bgcolor-main;
+  font-family: base.$font-stack;
+  color: base.$text-color;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Hero-sektion */
+.hero {
+  background-image: url('../images/beach-2413081_1920pixabay1.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 40px 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-overlay {
+  max-width: 800px;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  color: black;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+h1 {
+  @include components.h1-title();
+  margin-bottom: 20px;
+}
+
+h2 {
+  @include components.h2-title();
+  margin-bottom: 15px;
+}
+
+.welcome-text {
+  @include components.main-text();
+  flex: 1;
+  margin: 20px;
+  text-align: center;
+
+  .logo-name {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: base.$button-color;
+  }
+}
+
+.mobile-info-box {
+  display: block;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px 30px;
+  border-radius: 10px;
+  line-height: 1.7em;
+  font-size: 1.1em;
+  text-align: center;
+  margin: 20px 0;
+  border: 2px solid #ccc;
+}
+
+.desktop-info-box {
+  display: none;
+}
+
+/* Meny-sektion */
+.menu {
+  padding: 40px 0;
+  background-color: base.$bgcolor-main;
+
+  h2 {
+    @include components.h2-title();
+    margin-bottom: 20px;
+  }
+}
+
+#menu-content {
+  min-height: 200px;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  .menu-columns {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .menu-left-column,
+  .menu-right-column {
+    width: 100%;
+    background-color: base.$bgcolor-inner;
+  }
+
+  h3 {
+    @include components.h3-title();
+    margin-top: 10px;
+  }
+
+  .menu-item {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+}
+
+/* Laddningsanimation meny och take away-meny */
+#menu-content .loader,
+#menu-selection .loader {
+  border: 4px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 4px solid #3498db;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  display: none;
+  margin: 20px auto;
+}
+
+/* Bildgalleri-sektion */
+.image-carousel {
+  background-color: base.$bgcolor-main;
+  padding: 20px 0;
+  overflow: hidden;
+
+  .carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    margin: 0 auto;
+
+    .carousel-button {
+      background-color: rgba(255, 255, 255, 0.8);
+      border: none;
+      padding: 8px;
+      cursor: pointer;
+      font-size: 24px;
+      border-radius: 50%;
+      color: base.$button-color;
+      z-index: 1;
+    }
+
+    .carousel-track {
+      display: flex;
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+
+      img {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 200px;
+        margin-right: 10px;
+        scroll-snap-align: start;
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
+/* Om kaféet-sektion */
+.about {
+  padding: 40px 0;
+  background-color: base.$bgcolor-accent;
+
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    font-size: 1.2em;
+    line-height: 1.3em;
+
+    .about-text {
+      margin: 0;
+      text-align: left;
+
+      h2 {
+        @include components.h2-title();
+        margin-top: 10px;
+      }
+
+      .about-history {
+        margin-top: 15px;
+
+        h3 {
+          @include components.h3-title();
+          padding-bottom: 10px;
+        }
+      }
+    }
+
+    .about-image {
+      max-width: 400px;
+      margin-top: 20px;
+      margin-right: 0;
+      margin-bottom: 20px;
+
+      img {
+        width: 100%;
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
+/* Take Away-sektion */
+.takeaway {
+  padding: 30px 0;
+  background-color: base.$bgcolor-main;
+}
+
+.takeaway-textcontainer {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.3em;
+  font-size: 1.2em;
+  text-align: left;
+
+  h2 {
+    @include components.h2-title();
+    padding-bottom: 20px;
+  }
+}
+
+.takeaway-form {
+  display: flex;
+  flex-direction: column;
+  margin: 30px auto;
+  max-width: 1000px;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 30px 10px;
+  background-color: base.$bgcolor-inner;
+
+  h3 {
+    @include components.h3-title();
+  }
+
+  .order-form {
+    display: block;
+    width: 100%;
+
+    .form-content {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      .form-left,
+      .form-right {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        padding-left: 5px;
+        padding-right: 5px;
+
+        .form-group {
+          margin-bottom: 15px;
+          display: flex;
+          flex-direction: column;
+        }
+
+        input,
+        select {
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          margin-top: 5px;
+        }
+      }
+
+      .form-right {
+        background-color: rgba(0, 123, 158, 0.1);
+        padding: 20px;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  .form-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    button {
+      width: auto;
+      padding: 10px 30px;
+      background-color: base.$button-color;
+      color: base.$button-text-color;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.1em;
+
+      &:hover {
+        background-color: base.$button-hover-color;
+      }
+    }
+  }
+}
+
+#menu-selection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: none;
+  overflow-y: visible;
+  padding-right: 10px;
+
+  h4 {
+    @include components.h4-title();
+  }
+
+  .menu-item {
+    display: flex;
+    align-items: center;
+  }
+
+  .menu-item input[type='checkbox'] {
+    margin-right: 10px;
+  }
+}
+
+#takeaway-carousel {
+  background-color: base.$bgcolor-main;
+  margin-bottom: 30px;
+}
+
+#toTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  background-color: base.$button-color;
+  color: base.$button-text-color;
+  border: none;
+  border-radius: 50%;
+  padding: 15px;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+}
+
+#toTopBtn:hover {
+  background-color: base.$button-hover-color;
+}
+
+/* Media queries för surfplattor och desktops */
+@media (min-width: 768px) {
+  /* Meny-sektion */
+  #menu-content {
+    .menu-columns {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .menu-left-column,
+    .menu-right-column {
+      min-width: 300px;
+    }
+
+    .menu-left-column {
+      flex: 2;
+      border-right: 1px solid #ccc;
+    }
+
+    .menu-right-column {
+      flex: 1;
+      border-right: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+    }
+  }
+
+  /* Bildgalleri-sektion */
+  .image-carousel {
+    .carousel-container {
+      max-width: 1200px;
+
+      .carousel-button {
+        font-size: 30px;
+        padding: 10px;
+      }
+
+      .carousel-track img {
+        max-width: 250px;
+      }
+    }
+  }
+
+  /* Om kaféet-sektion */
+  .about {
+    .about-content {
+      flex-direction: row;
+      justify-content: space-between;
+
+      .about-text {
+        flex: 1;
+        margin: 0;
+        text-align: left;
+        padding-left: 20px;
+      }
+
+      .about-image {
+        flex: 1;
+        max-width: 400px;
+        margin-top: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  /* Take Away-sektion */
+  .takeaway-form {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 30px;
+
+    .order-form {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      .form-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        gap: 20px;
+      }
+
+      .form-left,
+      .form-right {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        max-width: 45%;
+        margin-bottom: 0;
+        padding-right: 0;
+      }
+    }
+
+    .form-footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #success-message-order {
+      display: none;
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      color: #155724;
+      background-color: #d4edda;
+      border-color: #c3e6cb;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      text-align: center;
+    
+      &.visible {
+        display: block;
+      }
+    }
+
+    .form-footer button{
+      width: auto;
+    }
+  }
+
+  #menu-selection {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+}
+
+@media (min-width: 1450px) {
+  /* Hero-sektion */
+  .hero {
+    height: 45vh;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mobile-info-box {
+    display: none;
+  }
+
+  .desktop-info-box {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px 30px;
+    border-radius: 10px;
+    line-height: 1.7em;
+    font-size: 1.1em;
+    position: absolute;
+    left: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 2px solid #ccc;
+  }
+}

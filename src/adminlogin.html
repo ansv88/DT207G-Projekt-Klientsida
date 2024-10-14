@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beppes strandbar - Admin login</title>
+    <link rel="stylesheet" href="css/main.scss" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="js/main.js" type="module" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo"><a href="index.html">Beppes Strandkafé</a></div>
+        <ul class="links">
+          <li><a href="index.html#meny">Meny</a></li>
+          <li><a href="index.html#about">Om kaféet</a></li>
+          <li><a href="index.html#takeaway">Take Away</a></li>
+        </ul>
+        <div class="toggle-btn" onclick="toggleMenu()">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </nav>
+
+      <ul class="dropdown-menu" [class.open]="isMenuOpen">
+        <li><a href="index.html#meny">Meny</a></li>
+        <li><a href="index.html#about">Om kaféet</a></li>
+        <li><a href="index.html#takeaway">Take Away</a></li>
+      </ul>
+    </header>
+
+    <div class="login-container">
+      <h1>Admin - logga in</h1>
+      <form action="adminlogin.html" method="post" id="login-form">
+        <label for="username">Användarnamn</label>
+        <input type="text" id="username" name="username" />
+
+        <label for="password">Lösenord</label>
+        <input type="password" id="password" name="password" />
+
+        <span class="error-text" id="login-error"></span>
+
+        <input type="submit" value="Logga in" />
+
+        <div class="loader" id="loading-spinner"></div>
+      </form>
+    </div>
+
+    <!-- Till toppen-knappen -->
+    <button id="toTopBtn" title="Till toppen">▲</button>
+
+    <footer id="main-footer">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h4>Öppettider</h4>
+          <p><i>Period 1/6 - 31/8</i></p>
+          <p>Måndag - Tisdag: Stängt</p>
+          <p>Onsdagar: 12:00 - 21:00</p>
+          <p>Torsdagar: 12:00 - 21:00</p>
+          <p>Fredagar: 12:00 - 21:00</p>
+          <p>Lördagar: 12:00 - 21:00</p>
+          <p>Söndagar: 12:00 - 17:00</p>
+        </div>
+        <div class="footer-section" id="contact">
+          <h4>Hitta hit</h4>
+          <p>Strandvägen 1</p>
+          <p>432 54 Varberg</p>
+        </div>
+        <div class="footer-section">
+          <h4>Snabblänkar</h4>
+          <ul>
+            <li><a href="#meny">Meny</a></li>
+            <li><a href="#about">Om kaféet</a></li>
+            <li><a href="#takeaway">Take Away</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Sociala Medier</h4>
+          <ul class="social-media">
+            <li>
+              <a href="https://facebook.com" aria-label="Länk till Facebook" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            </li>
+            <li>
+              <a href="https://instagram.com" aria-label="Länk till Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href="https://twitter.com" aria-label="Länk till Twitter" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Admin</h4>
+          <ul class="admin-login">
+            <li><i class="fa-solid fa-lock"></i></li>
+            <li><a href="adminlogin.html">Admin</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Beppes Strandkafé & Bramserud Advertising / Annelie Svensson</p>
+        <p id="pic-attribute">Bilder från <a href="https://pixabay.com/sv/">Pixabay</a></p>
+      </div>
+    </footer>
+  </body>
+</html>

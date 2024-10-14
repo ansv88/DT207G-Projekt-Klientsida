@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beppes strandbar</title>
+    <link rel="stylesheet" href="css/main.scss" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="js/main.js" type="module" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo"><a href="index.html">Beppes Strandkafé</a></div>
+        <ul class="links">
+          <li><a href="#meny">Meny</a></li>
+          <li><a href="#about">Om kaféet</a></li>
+          <li><a href="#takeaway">Take Away</a></li>
+        </ul>
+        <div class="toggle-btn">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </nav>
+
+      <ul class="dropdown-menu" [class.open]="isMenuOpen">
+        <li><a href="#meny">Meny</a></li>
+        <li><a href="#about">Om kaféet</a></li>
+        <li><a href="#takeaway">Take Away</a></li>
+      </ul>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="info-box desktop-info-box">
+          <h2>Öppettider</h2>
+          <span class="info-span"><p>Period 1/6 - 31/8</p></span>
+          <p>Måndag - Tisdag: Stängt</p>
+          <p>Onsdagar: 12:00 - 21:00</p>
+          <p>Torsdagar: 12:00 - 21:00</p>
+          <p>Fredagar: 12:00 - 21:00</p>
+          <p>Lördagar: 12:00 - 21:00</p>
+          <p>Söndagar: 12:00 - 17:00</p>
+        </div>
+        <div class="hero-overlay">
+          <div class="welcome-text">
+            <h1>
+              Välkommen till <span class="logo-name">Beppes Strandkafé</span><br />– din oas vid
+              havet!
+            </h1>
+            <p>
+              Njut av god mat, läckra bakverk och svalkande drycker med utsikt över stranden.
+              Perfekt för en kaffe, en lunch eller en stunds avkoppling.<br /><br />Vi ses på
+              stranden!
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Info-box för mobil utanför hero -->
+      <div class="info-box mobile-info-box">
+        <h2>Öppettider</h2>
+        <span class="info-span"><p>Period 1/6 - 31/8</p></span>
+        <p>Måndag - Tisdag: Stängt</p>
+        <p>Onsdagar: 12:00 - 21:00</p>
+        <p>Torsdagar: 12:00 - 21:00</p>
+        <p>Fredagar: 12:00 - 21:00</p>
+        <p>Lördagar: 12:00 - 21:00</p>
+        <p>Söndagar: 12:00 - 17:00</p>
+      </div>
+
+      <section class="menu" id="meny">
+        <div class="container">
+          <h2>Vår Meny</h2>
+          <div id="menu-content">
+            <div class="loader"></div>
+            <!-- Meny kommer laddas här -->
+            <div class="menu-columns">
+              <div class="menu-left-column">
+                <div id="sandwiches"></div>
+                <div id="salads"></div>
+                <div id="hotmeals"></div>
+              </div>
+              <div class="menu-right-column">
+                <div id="beverage"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="image-carousel">
+        <div class="carousel-container">
+          <button class="carousel-button prev-button" aria-label="Föregående bild">&#10094;</button>
+          <div class="carousel-track">
+            <img src="images/quinoa-2986706_640pixabay.jpg" alt="Quinoasallad" />
+            <img src="images/sandwich-677696_640pixabay.jpg" alt="Surdegssmörgås med fyllning" />
+            <img src="images/drink-7156110_640pixabay.jpg" alt="Kaffekopp och nybakt bröd" />
+            <img src="images/food-1491303_640pixabay.jpg" alt="Lasagne" />
+            <img src="images/bullar-1502597_640pixabay.jpg" alt="Kanelbullar" />
+            <img src="images/salad-4432168_640pixabay.jpg" alt="Sommarsallad" />
+          </div>
+          <button class="carousel-button next-button" aria-label="Nästa bild">&#10095;</button>
+        </div>
+      </section>
+
+      <section class="about" id="about">
+        <div class="container">
+          <div class="about-content">
+            <div class="about-image">
+              <img src="images/thin-2902686_1920pixabay.jpg" alt="Väg till stranden" />
+            </div>
+            <div class="about-text">
+              <h2>Om Beppes Strandkafé</h2>
+              <p>
+                Beppes Strandkafé har varit en del av strandlivet i över 20 år. Vårt mål är att
+                erbjuda en avslappnad och trivsam miljö där våra gäster kan njuta av havets närhet
+                och god mat. Vi använder färska råvaror och gör allt för att ge dig en fantastisk
+                upplevelse.
+              </p>
+              <p>
+                <br />Resten av året har vi stängt vårt kafé i Varberg men då hittar ni oss istället
+                på soliga Kanarieöarna oktober till mars!
+              </p>
+
+              <div class="about-history">
+                <h3>Historia</h3>
+                <p>
+                  Kärnverksamheten på Kanarieöarna startades redan år 1978. År 2004 öppnades den
+                  svenska kaféverksamheten i Varberg av de nya delägarna Bramserud & Olsson.
+                </p>
+                <p>
+                  Båda verksamheterna strävar alltid efter att ge en härlig semesterkänsla och hög
+                  kundnöjdhet.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="takeaway" id="takeaway">
+        <div class="container">
+          <div class="takeaway-textcontainer">
+            <h2>Beställ Take Away</h2>
+            <p>
+              Vill du hellre äta din lunch på stranden? Inga problem, hos Beppes Strandkafé erbjuder
+              vi smidig take away! <br />
+              Välj från vår meny och ta med dig fräscha sallader, mackor eller drycker direkt ner
+              till stranden.<br /><br />
+              Du kan enkelt beställa här via vår hemsida eller direkt på plats. Snabbt, enkelt och
+              lika gott!
+            </p>
+          </div>
+          <div class="takeaway-form">
+            <form id="takeaway-form" action="#" method="POST" class="order-form">
+              <div class="form-content">
+                <div class="form-left">
+                  <div class="form-group">
+                    <label for="fullname">Namn:</label>
+                    <input
+                      type="text"
+                      id="fullname"
+                      name="fullname"
+                      placeholder="Ditt namn"
+                      required
+                    />
+                    <span id="fullname-error" class="error-text"></span>
+                  </div>
+                  <div class="form-group">
+                    <label for="phone">Telefonnummer:</label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      placeholder="Ditt telefonnummer"
+                      required
+                    />
+                    <span id="phone-error" class="error-text"></span>
+                  </div>
+                  <div class="form-group">
+                    <label for="pickup-date">Önskad dag och tid för avhämtning:</label>
+                    <input type="datetime-local" id="pickup-date" name="pickup-date" required />
+                    <span id="date-error" class="error-text"></span>
+                  </div>
+                </div>
+
+                <div class="form-right">
+                  <h3>Välj från vår meny</h3>
+                  <span id="menu-error" class="error-text"></span>
+                  <div id="menu-selection">
+                    <div class="loader"></div>
+                    <!-- Meny kommer att laddas här -->
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-footer">
+                <div id="success-message-order" class="hidden"></div>
+                <button type="submit">Beställ</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="image-carousel" id="takeaway-carousel">
+        <div class="carousel-container">
+          <button class="carousel-button prev-button" aria-label="Föregående bild">&#10094;</button>
+          <div class="carousel-track">
+            <img src="images/open-966315_640pixabay.jpg" alt="Öppet-skylt" />
+            <img src="images/cafe-6531490_640pixabay.jpg" alt="Kaféstolar och bord med utsikt över stranden"/>
+            <img src="images/ai-generated-7870460_640pixabay.jpg" alt="To go-mugg och solglasögon ligande i sanden på stranden"/>
+            <img src="images/deckchairs-355596_640pixabay.jpg" alt="Solstolar på stranden" />
+            <img src="images/summer-2564226_640pixabay.jpg" alt="Kaffekopp och havet" />
+            <img src="images/sea-4657505_640pixabay.jpg" alt="Havet vid stranden i solnedgång" />
+          </div>
+          <button class="carousel-button next-button" aria-label="Nästa bild">&#10095;</button>
+        </div>
+      </section>
+
+      <!-- Till toppen-knappen -->
+      <button id="toTopBtn" title="Till toppen">▲</button>
+    </main>
+
+    <footer id="main-footer">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h4>Öppettider</h4>
+          <p><i>Period 1/6 - 31/8</i></p>
+          <p>Måndag - Tisdag: Stängt</p>
+          <p>Onsdagar: 12:00 - 21:00</p>
+          <p>Torsdagar: 12:00 - 21:00</p>
+          <p>Fredagar: 12:00 - 21:00</p>
+          <p>Lördagar: 12:00 - 21:00</p>
+          <p>Söndagar: 12:00 - 17:00</p>
+        </div>
+        <div class="footer-section" id="contact">
+          <h4>Hitta hit</h4>
+          <p>Strandvägen 1</p>
+          <p>432 54 Varberg</p>
+        </div>
+        <div class="footer-section">
+          <h4>Snabblänkar</h4>
+          <ul>
+            <li><a href="#meny">Meny</a></li>
+            <li><a href="#about">Om kaféet</a></li>
+            <li><a href="#takeaway">Take Away</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Sociala Medier</h4>
+          <ul class="social-media">
+            <li>
+              <a href="https://facebook.com" aria-label="Länk till Facebook" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            </li>
+            <li>
+              <a href="https://instagram.com" aria-label="Länk till Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href="https://twitter.com" aria-label="Länk till Twitter" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Admin</h4>
+          <ul class="admin-login">
+            <li><i class="fa-solid fa-lock"></i></li>
+            <li><a href="adminlogin.html">Admin</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Beppes Strandkafé & Bramserud Advertising / Annelie Svensson</p>
+        <p id="pic-attribute">Bilder från <a href="https://pixabay.com/sv/">Pixabay</a></p>
+      </div>
+    </footer>
+  </body>
+</html>

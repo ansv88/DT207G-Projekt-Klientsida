@@ -31,7 +31,7 @@ export function initToTopButton() {
 }
 
 //Funktion för att toggla dropdown-menyn
-export function toggleMenu() {
+function toggleMenu() {
   const dropdownMenu = document.querySelector('.dropdown-menu');
   
   if (dropdownMenu) {
@@ -39,8 +39,26 @@ export function toggleMenu() {
   }
 }
 
-//Gör funktionen globalt tillgänglig
-window.toggleMenu = toggleMenu;
+//Funktion för att initiera mobilmenyn
+export function initMobileMenu() {
+    //Händelsehanterare för menyknappen
+  const toggleButton = document.querySelector('.toggle-btn');
+  if (toggleButton) {
+    toggleButton.addEventListener('click', toggleMenu, false);
+  }
+
+  //Händelsehanterare för navigeringslänkar i mobilmenyn
+  const dropdownLinks = document.querySelectorAll('.dropdown-menu a');
+  dropdownLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      //Stäng mobilmenyn när en länk klickas
+      const dropdownMenu = document.querySelector('.dropdown-menu');
+      if (dropdownMenu.classList.contains('open')) {
+        dropdownMenu.classList.remove('open');
+      }
+    });
+  });
+}
 
 //Funktion för att initiera bildkaruseller
 export function initCarousel() {

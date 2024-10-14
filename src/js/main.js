@@ -1,7 +1,7 @@
 import { checkUserAuthentication, setupLoginForm, setupLogoutButton } from './auth.js';
 import { fetchAndDisplayMenu, setupMenuForm, fetchAndDisplayAdminMenu } from './menu.js';
 import { fetchAndDisplayOrders, setupTakeawayForm } from './orders.js';
-import { initToTopButton, toggleMenu, initCarousel } from './utils.js';
+import { initToTopButton, initCarousel, initMobileMenu } from './utils.js';
 
 //Huvudfunktion som körs när DOM är laddad
 document.addEventListener('DOMContentLoaded', initializePage);
@@ -12,7 +12,7 @@ function initializePage() {
   initToTopButton();          //Initiera "Till toppen"-knappen
   initCarousel();             // Initiera bildkarusellen
 
-  //Om vi är på adminpage.html, hämta och visa menyn i adminpanelen
+  //Om sidan är adminpage.html, hämta och visa menyn i adminpanelen
   if (window.location.pathname.includes('adminpage.html')) {
     fetchAndDisplayAdminMenu();
     fetchAndDisplayOrders(); //Hämta och visa beställningar
@@ -27,10 +27,7 @@ function initEventListeners() {
   setupLoginForm();    //Hantera inloggningsformuläret
   setupLogoutButton(); //Hantera "Logga ut"-knappen
   setupMenuForm();     //Hantera formuläret för att lägga till nya menyobjekt
-  setupTakeawayForm(); // Hantera Take Away-beställningsformuläret
-
-  //Variabel och händelsehanterare för mobilmenyn
-  const toggleButton = document.querySelector('.toggle-btn');
-  toggleButton.addEventListener('click', toggleMenu, false);
+  setupTakeawayForm(); //Hantera Take Away-beställningsformuläret
+  initMobileMenu(); //Hantera mobilmenyn
 
 }

@@ -10,7 +10,7 @@ function initializePage() {
   initEventListeners();       //Initiera alla händelsehanterare
   checkUserAuthentication();  //Kontrollera användarens autentisering
   initToTopButton();          //Initiera "Till toppen"-knappen
-  initCarousel();             // Initiera bildkarusellen
+  initCarousel();             //Initiera bildkarusellen
 
   //Om sidan är adminpage.html, hämta och visa menyn i adminpanelen
   if (window.location.pathname.includes('adminpage.html')) {

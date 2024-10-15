@@ -4,6 +4,7 @@ export function formatPickupDate(pickupDate) {
 
   //Formaterar datumet enligt svensk standard
   return date.toLocaleString('sv-SE', {
+    timeZone: 'Europe/Stockholm',
     year: 'numeric',
     month: '2-digit',
     day: '2-digit',

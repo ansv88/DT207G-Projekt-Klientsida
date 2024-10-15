@@ -29,5 +29,4 @@ function initEventListeners() {
   setupMenuForm();     //Hantera formuläret för att lägga till nya menyobjekt
   setupTakeawayForm(); //Hantera Take Away-beställningsformuläret
   initMobileMenu(); //Hantera mobilmenyn
-
 }

@@ -9,6 +9,8 @@ const categoryMap = {
   salads: 'Sallader',
   hotmeals: 'Varmrätter',
   beverage: 'Drycker',
+  hotbeverage: 'Varma drycker',
+  sweet: 'Sött',
 };
 
 //Funktion för att generera Take Away-menyn
@@ -30,6 +32,8 @@ export function generateTakeawayMenu(menuItems) {
   let saladsAdded = false;
   let hotmealsAdded = false;
   let beverageAdded = false;
+  let hotbeverageAdded = false;
+  let sweetAdded = false;
 
   //Loopar igenom menyobjekten
   menuItems.forEach((item) => {
@@ -69,6 +73,24 @@ export function generateTakeawayMenu(menuItems) {
         header.textContent = categoryMap['beverage'];
         menuSelection.appendChild(header);
         beverageAdded = true;
+      }
+      const menuItem = createCheckboxMenuItem(item);
+      menuSelection.appendChild(menuItem);
+    } else if (category === 'hotbeverage') {
+      if (!hotbeverageAdded) {
+        const header = document.createElement('h4');
+        header.textContent = categoryMap['hotbeverage'];
+        menuSelection.appendChild(header);
+        hotbeverageAdded = true;
+      }
+      const menuItem = createCheckboxMenuItem(item);
+      menuSelection.appendChild(menuItem);
+    } else if (category === 'sweet') {
+      if (!sweetAdded) {
+        const header = document.createElement('h4');
+        header.textContent = categoryMap['sweet'];
+        menuSelection.appendChild(header);
+        sweetAdded = true;
       }
       const menuItem = createCheckboxMenuItem(item);
       menuSelection.appendChild(menuItem);

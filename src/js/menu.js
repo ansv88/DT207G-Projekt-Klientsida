@@ -9,6 +9,8 @@ const categoryMap = {
   salads: 'Sallader',
   hotmeals: 'Varmrätter',
   beverage: 'Drycker',
+  hotbeverage: 'Varma drycker',
+  sweet: 'Sött',
 };
 
 //Funktion för att hämta och visa menyobjekt
@@ -56,9 +58,11 @@ export function displayMenuByCategory(menuItems) {
   const saladsSection = document.getElementById('salads');
   const hotmealsSection = document.getElementById('hotmeals');
   const beverageSection = document.getElementById('beverage');
+  const hotbeverageSection = document.getElementById('hotbeverage');
+  const sweetSection = document.getElementById('sweet');
 
   //Om inga sektioner finns, avsluta funktionen
-  if (!sandwichesSection && !saladsSection && !hotmealsSection && !beverageSection) {
+  if (!sandwichesSection && !saladsSection && !hotmealsSection && !beverageSection && !hotbeverageSection && !sweetSection) {
     return;
   }
 
@@ -74,6 +78,12 @@ export function displayMenuByCategory(menuItems) {
   }
   if (beverageSection) {
     beverageSection.innerHTML = `<h3>${categoryMap['beverage']}</h3>`;
+  }
+  if (hotbeverageSection) {
+    hotbeverageSection.innerHTML = `<h3>${categoryMap['hotbeverage']}</h3>`;
+  }
+  if (sweetSection) {
+    sweetSection.innerHTML = `<h3>${categoryMap['sweet']}</h3>`;
   }
 
   //Loopa igenom menyobjekten och lägg till dem i respektive kategori
@@ -92,6 +102,10 @@ export function displayMenuByCategory(menuItems) {
       hotmealsSection.appendChild(menuItem);
     } else if (category === 'beverage' && beverageSection) {
       beverageSection.appendChild(menuItem);
+    } else if (category === 'hotbeverage' && hotbeverageSection) {
+      hotbeverageSection.appendChild(menuItem);
+    } else if (category === 'sweet' && sweetSection) {
+      sweetSection.appendChild(menuItem);
     } else {
       console.log(`Kategori ${item.category} stöds inte.`);
     }

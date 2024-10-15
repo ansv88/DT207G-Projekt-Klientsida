@@ -15,94 +15,55 @@ const categoryMap = {
 
 //Funktion för att generera Take Away-menyn
 export function generateTakeawayMenu(menuItems) {
-  const menuSelection = document.getElementById('menu-selection');
-  const takeawayLoader = document.querySelector('#menu-selection .loader');
-
-  if (!menuSelection) return; //Om elementet inte finns, avsluta funktionen
-
-  //Visa laddningsanimationen
-  if (takeawayLoader) {
-    takeawayLoader.style.display = 'block';
-  }
-
-  menuSelection.innerHTML = ''; //Töm innehållet i menyn innan nya objekt läggs till
-
-  //Flagga för att hålla koll på om varje kategori redan har lagts till
-  let sandwichesAdded = false;
-  let saladsAdded = false;
-  let hotmealsAdded = false;
-  let beverageAdded = false;
-  let hotbeverageAdded = false;
-  let sweetAdded = false;
-
-  //Loopar igenom menyobjekten
-  menuItems.forEach((item) => {
-    const category = item.category.trim().toLowerCase();
-
-    //Lägg till objekt i rätt kategori med kategorirubriker
-    if (category === 'sandwiches') {
-      if (!sandwichesAdded) {
-        const header = document.createElement('h4');
-        header.textContent = categoryMap['sandwiches'];
-        menuSelection.appendChild(header);
-        sandwichesAdded = true;
-      }
-      const menuItem = createCheckboxMenuItem(item);
-      menuSelection.appendChild(menuItem);
-    } else if (category === 'salads') {
-      if (!saladsAdded) {
-        const header = document.createElement('h4');
-        header.textContent = categoryMap['salads'];
-        menuSelection.appendChild(header);
-        saladsAdded = true;
-      }
-      const menuItem = createCheckboxMenuItem(item);
-      menuSelection.appendChild(menuItem);
-    } else if (category === 'hotmeals') {
-      if (!hotmealsAdded) {
-        const header = document.createElement('h4');
-        header.textContent = categoryMap['hotmeals'];
-        menuSelection.appendChild(header);
-        hotmealsAdded = true;
-      }
-      const menuItem = createCheckboxMenuItem(item);
-      menuSelection.appendChild(menuItem);
-    } else if (category === 'beverage') {
-      if (!beverageAdded) {
-        const header = document.createElement('h4');
-        header.textContent = categoryMap['beverage'];
-        menuSelection.appendChild(header);
-        beverageAdded = true;
-      }
-      const menuItem = createCheckboxMenuItem(item);
-      menuSelection.appendChild(menuItem);
-    } else if (category === 'hotbeverage') {
-      if (!hotbeverageAdded) {
-        const header = document.createElement('h4');
-        header.textContent = categoryMap['hotbeverage'];
-        menuSelection.appendChild(header);
-        hotbeverageAdded = true;
-      }
-      const menuItem = createCheckboxMenuItem(item);
-      menuSelection.appendChild(menuItem);
-    } else if (category === 'sweet') {
-      if (!sweetAdded) {
-        const header = document.createElement('h4');
-        header.textContent = categoryMap['sweet'];
-        menuSelection.appendChild(header);
-        sweetAdded = true;
-      }
-      const menuItem = createCheckboxMenuItem(item);
-      menuSelection.appendChild(menuItem);
-    } else {
-      console.log(`Kategori ${item.category} stöds inte.`);
-    }
-  });
-
-  //Dölj laddningsanimationen när menyn har genererats
-  if (takeawayLoader) {
-    takeawayLoader.style.display = 'none';
-  }
+   const sandwichesSection = document.getElementById('sandwiches-takeaway');
+   const saladsSection = document.getElementById('salads-takeaway');
+   const hotmealsSection = document.getElementById('hotmeals-takeaway');
+   const beverageSection = document.getElementById('beverage-takeaway');
+   const hotbeverageSection = document.getElementById('hotbeverage-takeaway');
+   const sweetSection = document.getElementById('sweet-takeaway');
+ 
+   //Sätt rubriker med svenska kategorinamn (categoryMap)
+   if (sandwichesSection) {
+     sandwichesSection.innerHTML = `<h4>${categoryMap['sandwiches']}</h4>`;
+   }
+   if (saladsSection) {
+     saladsSection.innerHTML = `<h4>${categoryMap['salads']}</h4>`;
+   }
+   if (hotmealsSection) {
+     hotmealsSection.innerHTML = `<h4>${categoryMap['hotmeals']}</h4>`;
+   }
+   if (beverageSection) {
+     beverageSection.innerHTML = `<h4>${categoryMap['beverage']}</h4>`;
+   }
+   if (hotbeverageSection) {
+     hotbeverageSection.innerHTML = `<h4>${categoryMap['hotbeverage']}</h4>`;
+   }
+   if (sweetSection) {
+     sweetSection.innerHTML = `<h4>${categoryMap['sweet']}</h4>`;
+   }
+ 
+   //Loopa igenom menyobjekten och lägg till dem i respektive kategori
+   menuItems.forEach((item) => {
+     const category = item.category.trim().toLowerCase();
+     const menuItem = createCheckboxMenuItem(item);
+ 
+     //Lägg till menyobjekt i rätt kategori
+     if (category === 'sandwiches' && sandwichesSection) {
+       sandwichesSection.appendChild(menuItem);
+     } else if (category === 'salads' && saladsSection) {
+       saladsSection.appendChild(menuItem);
+     } else if (category === 'hotmeals' && hotmealsSection) {
+       hotmealsSection.appendChild(menuItem);
+     } else if (category === 'beverage' && beverageSection) {
+       beverageSection.appendChild(menuItem);
+     } else if (category === 'hotbeverage' && hotbeverageSection) {
+       hotbeverageSection.appendChild(menuItem);
+     } else if (category === 'sweet' && sweetSection) {
+       sweetSection.appendChild(menuItem);
+     } else {
+       console.log(`Kategori ${item.category} stöds inte.`);
+     }
+   });
 }
 
 //Funktion för att skapa ett menyobjekt med checkbox

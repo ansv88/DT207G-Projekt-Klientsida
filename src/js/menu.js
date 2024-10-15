@@ -17,8 +17,13 @@ const categoryMap = {
 export function fetchAndDisplayMenu() {
   //Visa laddningsanimation
   const menuLoader = document.querySelector('#menu-content .loader');
+  const takeawayLoader = document.querySelector('#menu-selection .loader');
+
   if (menuLoader) {
     menuLoader.style.display = 'block';
+  }
+  if (takeawayLoader) {
+    takeawayLoader.style.display = 'block';
   }
 
   //Hämta menyobjekt från api
@@ -28,6 +33,9 @@ export function fetchAndDisplayMenu() {
       //Dölj laddningsanimation när data har hämtats
       if (menuLoader) {
         menuLoader.style.display = 'none';
+      }
+      if (takeawayLoader) {
+        takeawayLoader.style.display = 'none';
       }
 
       //Visa menyobjekt om data finns
@@ -41,6 +49,9 @@ export function fetchAndDisplayMenu() {
       //Dölj laddningsanimationen även vid fel
       if (menuLoader) {
         menuLoader.style.display = 'none';
+      }
+      if (takeawayLoader) {
+        takeawayLoader.style.display = 'none';
       }
       console.error('Fel vid hämtning av menyobjekt:', error);
     });

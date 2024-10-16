@@ -1,7 +1,6 @@
 //Funktion för att formatera datum
 export function formatPickupDate(pickupDate) {
-  const localDateString = pickupDate.replace('T', ' '); //Ersätter 'T' med ett mellanslag för att tolka som lokal tid
-  const date = new Date(localDateString); //Skapar ett Date-objekt från det angivna datumet
+  const date = new Date(pickupDate); //Skapar ett Date-objekt från ISO-strängen
 
   //Formaterar datumet enligt svensk standard
   return date.toLocaleString('sv-SE', {

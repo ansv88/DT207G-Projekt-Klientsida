@@ -8,7 +8,7 @@ const categoryMap = {
   sandwiches: 'Mackor',
   salads: 'Sallader',
   hotmeals: 'Varmrätter',
-  beverage: 'Drycker',
+  beverage: 'Kalla drycker',
   hotbeverage: 'Varma drycker',
   sweet: 'Sött',
 };
@@ -102,7 +102,7 @@ export function displayMenuByCategory(menuItems) {
     const category = item.category.trim().toLowerCase();
     const menuItem = document.createElement('div');
     menuItem.classList.add('menu-item');
-    menuItem.innerHTML = `<p>${item.dishName} - ${item.price} kr<br>Ingredienser: ${item.ingredients}</p>`;
+    menuItem.innerHTML = `<p>${item.dishName} - ${item.price} kr<br><i>Ingredienser: ${item.ingredients}</i></p>`;
 
     //Lägg till objekt i rätt kategori
     if (category === 'sandwiches' && sandwichesSection) {

@@ -5,17 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Beppes strandbar</title>
     <link rel="stylesheet" href="css/main.scss" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Permanent+Marker&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="js/main.js" type="module" defer></script>
   </head>
 
   <body>
     <header>
       <nav class="navbar">
-        <div class="logo"><a href="index.html">Beppes Strandkafé</a></div>
+        <div class="logo"><a href="index.html"><img src="images/beppes-strandkafe-logo.webp" alt="Beppes Strandkafé logo"></a></div>
         <ul class="links">
           <li><a href="#meny">Meny</a></li>
           <li><a href="#about">Om kaféet</a></li>
@@ -74,7 +75,7 @@
 
       <section class="menu" id="meny">
         <div class="container">
-          <h2>Vår Meny</h2>
+          <h2>Meny</h2>
           <div id="menu-content">
             <div class="loader"></div>
             <!-- Meny kommer laddas här -->
@@ -147,7 +148,7 @@
       <section class="takeaway" id="takeaway">
         <div class="container">
           <div class="takeaway-textcontainer">
-            <h2>Beställ Take Away</h2>
+            <h2>Take Away</h2>
             <p>
               Vill du hellre äta din lunch på stranden? Inga problem, hos Beppes Strandkafé erbjuder
               vi smidig take away! <br />
@@ -196,15 +197,15 @@
                   <div id="menu-selection">
                     <div class="loader"></div>
                     <!-- Meny kommer att laddas här -->
-                        <div id="sandwiches-takeaway"></div>
-                        <div id="salads-takeaway"></div>
-                        <div id="hotmeals-takeaway"></div>
-                        <div id="beverage-takeaway"></div>
-                        <div id="hotbeverage-takeaway"></div>
-                        <div id="sweet-takeaway"></div>
+                    <div id="sandwiches-takeaway"></div>
+                    <div id="salads-takeaway"></div>
+                    <div id="hotmeals-takeaway"></div>
+                    <div id="beverage-takeaway"></div>
+                    <div id="hotbeverage-takeaway"></div>
+                    <div id="sweet-takeaway"></div>
                   </div>
                 </div>
-
+              </div>
               <div class="form-footer">
                 <div id="success-message-order" class="hidden"></div>
                 <button type="submit">Beställ</button>
@@ -236,7 +237,7 @@
     <footer id="main-footer">
       <div class="footer-container">
         <div class="footer-section">
-          <h4>Öppettider</h4>
+          <h3>Öppettider</h3>
           <p><i>Period 1/6 - 31/8</i></p>
           <p>Måndag - Tisdag: Stängt</p>
           <p>Onsdagar: 12:00 - 21:00</p>
@@ -246,12 +247,12 @@
           <p>Söndagar: 12:00 - 17:00</p>
         </div>
         <div class="footer-section" id="contact">
-          <h4>Hitta hit</h4>
+          <h3>Hitta hit</h3>
           <p>Strandvägen 1</p>
           <p>432 54 Varberg</p>
         </div>
         <div class="footer-section">
-          <h4>Snabblänkar</h4>
+          <h3>Snabblänkar</h3>
           <ul>
             <li><a href="#meny">Meny</a></li>
             <li><a href="#about">Om kaféet</a></li>
@@ -259,7 +260,7 @@
           </ul>
         </div>
         <div class="footer-section">
-          <h4>Sociala Medier</h4>
+          <h3>Sociala Medier</h3>
           <ul class="social-media">
             <li>
               <a href="https://facebook.com" aria-label="Länk till Facebook" target="_blank"><i class="fa-brands fa-facebook"></i></a>
@@ -273,7 +274,7 @@
           </ul>
         </div>
         <div class="footer-section">
-          <h4>Admin</h4>
+          <h3>Admin</h3>
           <ul class="admin-login">
             <li><i class="fa-solid fa-lock"></i></li>
             <li><a href="adminlogin.html">Admin</a></li>

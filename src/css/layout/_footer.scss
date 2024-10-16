@@ -20,9 +20,8 @@
       min-width: 220px;
       margin-bottom: 20px;
 
-      h4 {
-        font-family: base.$font-stack-nav;
-        font-size: 1.5em;
+      h3 {
+        @include components.h3-title();
         color: base.$text-color-accent;
         margin-bottom: 15px;
         text-align: center;

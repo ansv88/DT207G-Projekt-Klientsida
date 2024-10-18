@@ -91,10 +91,6 @@ h2 {
   text-align: center;
   margin: 20px 0;
   border: 2px solid #ccc;
-
-  .info-span {
-    text-align: center;
-  }
 }
 
 .desktop-info-box {
@@ -555,7 +551,8 @@ h2 {
     transform: translateY(-50%);
     border: 2px solid #ccc;
 
-    .info-span {
+    p .info-span {
+      display: block;
       text-align: center;
     }
   }

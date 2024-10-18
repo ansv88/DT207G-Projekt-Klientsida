@@ -73,7 +73,7 @@ h2 {
   text-align: center;
 
   .logo-name {
-    font-family: 'Permanent Marker', cursive;
+    font-family: base.$font-stack-logo;
     font-size: 0.9em;
     font-weight: bold;
     color: base.$text-color-accent;

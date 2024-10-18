@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <script src="js/main.js" type="module" defer></script>
+    <script src="js/main.js" type="module"></script>
   </head>
 
   <body>
@@ -27,7 +27,7 @@
         </div>
       </nav>
 
-      <ul class="dropdown-menu" [class.open]="isMenuOpen">
+      <ul class="dropdown-menu">
         <li><a href="#meny">Meny</a></li>
         <li><a href="#about">Om kaféet</a></li>
         <li><a href="#takeaway">Take Away</a></li>
@@ -38,7 +38,7 @@
       <section class="hero">
         <div class="info-box desktop-info-box">
           <h2>Öppettider</h2>
-          <span class="info-span"><p>Period 1/6 - 31/8</p></span>
+          <p></p><span class="info-span">Period 1/6 - 31/8</span></p>
           <p>Måndag - Tisdag: Stängt</p>
           <p>Onsdagar: 12:00 - 21:00</p>
           <p>Torsdagar: 12:00 - 21:00</p>
@@ -48,10 +48,7 @@
         </div>
         <div class="hero-overlay">
           <div class="welcome-text">
-            <h1>
-              Välkommen till <span class="logo-name">Beppes Strandkafé</span><br />– din oas vid
-              havet!
-            </h1>
+            <h1>Välkommen till <span class="logo-name">Beppes Strandkafé</span><br/>– din oas vid havet!</h1>
             <p>
               Njut av god mat, läckra bakverk och svalkande drycker med utsikt över stranden.
               Perfekt för en kaffe, en lunch eller en stunds avkoppling.<br /><br />Vi ses på
@@ -64,7 +61,7 @@
       <!-- Info-box för mobil utanför hero -->
       <div class="info-box mobile-info-box">
         <h2>Öppettider</h2>
-        <span class="info-span"><p>Period 1/6 - 31/8</p></span>
+        <p><span class="info-span">Period 1/6 - 31/8</span></p>
         <p>Måndag - Tisdag: Stängt</p>
         <p>Onsdagar: 12:00 - 21:00</p>
         <p>Torsdagar: 12:00 - 21:00</p>

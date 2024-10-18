@@ -40,11 +40,6 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  .info-span {
-    text-align: center;
-  }
-
 }
 
 .hero-overlay {
@@ -96,6 +91,10 @@ h2 {
   text-align: center;
   margin: 20px 0;
   border: 2px solid #ccc;
+
+  .info-span {
+    text-align: center;
+  }
 }
 
 .desktop-info-box {
@@ -513,13 +512,13 @@ h2 {
       border: 1px solid transparent;
       border-radius: 4px;
       text-align: center;
-    
+
       &.visible {
         display: block;
       }
     }
 
-    .form-footer button{
+    .form-footer button {
       width: auto;
     }
   }
@@ -555,5 +554,9 @@ h2 {
     top: 50%;
     transform: translateY(-50%);
     border: 2px solid #ccc;
+
+    .info-span {
+      text-align: center;
+    }
   }
 }

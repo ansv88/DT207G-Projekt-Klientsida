@@ -150,12 +150,23 @@ function displayAdminMenuItems(menuItems) {
   const adminMenuItemsContainer = document.getElementById('admin-menu-items');
   adminMenuItemsContainer.innerHTML = '';
 
+  //Spåra vilka kategorier som redan har en rubrik
+  const addedCategories = new Set();
+
   menuItems.forEach((item) => {
+    const category = item.category.trim().toLowerCase();
+    const categorySwedish = categoryMap[category] || category;
+
+    //Om kategorin inte redan har en rubrik, lägg till den
+    if (!addedCategories.has(category)) {
+      const categoryHeader = document.createElement('h3');
+      categoryHeader.textContent = categorySwedish;
+      adminMenuItemsContainer.appendChild(categoryHeader);
+      addedCategories.add(category);
+    }
+
     const menuItemDiv = document.createElement('div');
     menuItemDiv.classList.add('admin-menu-item');
-
-    //Översätt kategorin till svenska för visning
-    const categorySwedish = categoryMap[item.category.trim().toLowerCase()] || item.category;
 
     menuItemDiv.innerHTML = `
         <div class="menu-item-view">

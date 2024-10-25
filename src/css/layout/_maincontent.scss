@@ -245,8 +245,9 @@ h2 {
   background-color: base.$bgcolor-main;
 
   #menu-selection {
-    overflow-y: auto;
+    overflow-y: scroll;
     scrollbar-width: auto;
+    scrollbar-gutter: stable;
   }
 }
 

@@ -107,12 +107,17 @@ export function setupTakeawayForm() {
       const phone = document.getElementById('phone').value;
       const pickupDate = document.getElementById('pickup-date').value;
 
-      //Ersätt 'T' med ett mellanslag för att få en lokal datumsträng
-      const localDateString = pickupDate.replace('T', ' ');
+      const localDateString = pickupDate.replace('T', ' '); //Ersätt 'T' med ett mellanslag för att få en lokal datumsträng
       const pickupDateObj = new Date(localDateString); //Skapa ett Date-objekt i lokal tid
+      const currentDate = new Date();
 
-      //Konvertera till ISO-sträng (UTC-tid)
-      const pickupDateISO = pickupDateObj.toISOString();
+      //Kontrollera att det valda datumet är i framtiden
+      if (pickupDateObj < currentDate) {
+        pickupDateErrorEl.textContent = 'Välj ett datum och tid som inte redan har passerat.';
+        return; //Avbryt om datumet har passerat
+      } else {
+        pickupDateErrorEl.textContent = ''; //Rensa felmeddelande om datumet är giltigt
+      }
 
       //Validera att namn fyllts i
       if (!isNaN(fullname) || fullname.trim() === '') {
@@ -165,7 +170,7 @@ export function setupTakeawayForm() {
       const orderData = {
         fullname,
         phone,
-        pickupDate: pickupDateISO,
+        pickupDate: pickupDateObj.toISOString(), //Konvertera till ISO-sträng (UTC-tid)
         items: selectedMenuItems, //Lista med valda maträtter
       };
 
